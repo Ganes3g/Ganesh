@@ -4,7 +4,7 @@ pipeline {
         stage ('Maven build') {
             steps {
                 scripts {
-                    def mvnHome= tool name:'maven3',type:'maven' 
+                    def mvnHome = tool name: 'maven3', type: 'maven'
                     sh "${mvnHome}/bin/mvn clean package"
                     sh 'mv target/myweb*.war target/newapp.war'
                 }
@@ -15,7 +15,6 @@ pipeline {
                 scripts {
                     sh 'docker build -t newimage:v1 .'
                     sh 'docker images'
-                    sh 'docker ps'
                 }
             }
         }
