@@ -6,6 +6,8 @@ pipeline {
                 script {
                         sh 'npm install'
                 }
+            } 
+        }       
         stage ('Docker build') {
             steps {
                 script {
@@ -17,7 +19,7 @@ pipeline {
             }
         }
         
-            }
-        }
+            
+        
     }
 }
